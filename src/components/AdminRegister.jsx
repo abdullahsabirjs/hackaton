@@ -27,7 +27,7 @@ const AdminRegister = () => {
         <InputField
          type = 'password'
          placeholder='Password'
-         value={Password}
+         value={password}
          onChange={ (e) => setPassword(e.target.value)}
          required 
          />

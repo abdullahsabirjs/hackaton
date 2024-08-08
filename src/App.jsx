@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../src/components/Home.jsx';
 import ChooseUser from '../src/components/ChooseUser';
-import AdminSignIn from '../src/components/AdminSignIn';
-import StudentSignIn from '../src/components/StudentSignIn';
-import TeacherSignIn from '../src/components/TeacherSignIn';
-import AdminDashboard from '../src/pages/Admin/Dashboard';
-import StudentDashboard from '../src/pages/Students/Dashboard';
-import TeacherDashboard from '../src/pages/Teachers/Dashboard';
+import AdminSignIn from './components/AdminSignIn';
+import StudentSignIn from './components/StudentSignIn';
+import TeacherSignIn from './components/TeacherSignIn';
+import AdminDashboard from './pages/Admin/Dashboard';
+import StudentDashboard from './pages/Students/Dashboard';
+import TeacherDashboard from './pages/Teachers/Dashboard';
 
 import Classes from '../src/pages/Admin/Classes';
 import Teachers from '../src/pages/Admin/Teachers';
@@ -37,12 +37,12 @@ const App = () => {
         <Route path="/choose-user" element={<ChooseUser />} />
 
         {/* All the sign-in pages/routes */}
-        <Route path="/admin-signIn" element={<AdminSignIn />} />
-        <Route path="/student-signIn" element={<StudentSignIn />} />
-        <Route path="/teacher-signIn" element={<TeacherSignIn />} />
+        <Route exact path="/admin-signIn" element={<AdminSignIn />} />
+        <Route exact path="/student-signIn" element={<StudentSignIn />} />
+        <Route exact path="/teacher-signIn" element={<TeacherSignIn />} />
 
         {/* All the dashboard routes */}
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/teacher/dashboard" element={<TeacherDashboard />} />        
         <Route path="/student/dashboard" element={<StudentDashboard />} />
 

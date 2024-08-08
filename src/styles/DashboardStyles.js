@@ -27,6 +27,7 @@ export const BottomContent = styled.div`
 export const Section = styled.section`
   margin-bottom: 40px;
   flex: 1; /* Make the sections expand to fill the available space */
+
 `;
 
 export const SectionTitle = styled.h2`
@@ -41,7 +42,7 @@ export const CardContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: #ffffff;
+  background-color: #1E90FF;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -57,12 +58,12 @@ export const Card = styled.div`
 export const CardTitle = styled.h3`
   font-size: 18px;
   margin-bottom: 10px;
-  color: #007bff; 
+  color: #ffffff;
 `;
 
 export const CardContent = styled.p`
   font-size: 16px;
-  color: #555555;
+  color: #ffffff;
 `;
 
 export const StudentDashboardContainer = styled.div`

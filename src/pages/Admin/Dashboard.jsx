@@ -1,59 +1,22 @@
 // AdminDashboard.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-import EventCalendar from './EventCalender';
-import axios from 'axios';
 import {
   AdminDashboardContainer,
   Content,
   TopContent,
-  BottomContent,
   Section,
   SectionTitle,
   CardContainer,
   Card,
   CardTitle,
   CardContent,
+  BottomContent,
 } from '../../styles/DashboardStyles';
+import Announcement from './Announcement';
 
 const AdminDashboard = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [events, setEvents] = useState([]);
-  const [announcements, setAnnouncements] = useState([]);
-  const [studentPerformance, setStudentPerformance] = useState([]);
-
-  useEffect(() => {
-    fetchEvents();
-    fetchAnnouncements();
-    fetchStudentPerformance();
-  }, []);
-
-  const fetchEvents = async () => {
-    try {
-      const response = await axios.get('http://localhost:4000/api/v1/events/getall');
-      setEvents(response.data.events || []);
-    } catch (error) {
-      console.error('Error fetching events:', error);
-    }
-  };
-
-  const fetchAnnouncements = async () => {
-    try {
-      const response = await axios.get('http://localhost:4000/api/v1/announcements/getall');
-      setAnnouncements(response.data.announcements || []);
-    } catch (error) {
-      console.error('Error fetching announcements:', error);
-    }
-  };
-
-  const fetchStudentPerformance = async () => {
-    try {
-      const response = await axios.get('http://localhost:4000/api/v1/performance/getall');
-      setStudentPerformance(response.data.performance || []);
-    } catch (error) {
-      console.error('Error fetching student performance:', error);
-    }
-  };
 
   return (
     <AdminDashboardContainer>
@@ -77,15 +40,10 @@ const AdminDashboard = () => {
               </Card>
             </CardContainer>
           </Section>
-
-          <Section>
-            <EventCalendar events={events} />
-          </Section>
         </TopContent>
 
         <BottomContent>
-          <Performance studentPerformance={studentPerformance} />
-          <Announcement announcements={announcements} />
+          <Announcement/>
         </BottomContent>
       </Content>
     </AdminDashboardContainer>
